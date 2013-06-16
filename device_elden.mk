@@ -293,6 +293,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.apm_sim_not_pwdn=1 \
 	ro.vendor.extension_library=/system/lib/libqc-opt.so \
 	persist.sys.ztelog.enable=0 \
+	ro.telephony.default_network=4 \
 	persist.radio.add_power_save=1 \
 	ro.com.google.clientidbase.ms=android-metropcs-us \
 	ro.com.google.clientidbase.yt=android-zte \
