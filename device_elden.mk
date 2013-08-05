@@ -3,6 +3,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
+$(call inherit-product, build/target/product/full.mk)
+
+$(call inherit-product-if-exists, vendor/zte/elden/elden-vendor.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/zte/elden/overlay
 
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
@@ -11,10 +15,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-
-$(call inherit-product, build/target/product/full_base_telephony.mk)
-
-$(call inherit-product-if-exists, vendor/zte/elden/elden-vendor.mk)
 
 LOCAL_PATH := device/zte/elden
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -26,17 +26,17 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+$(call inherit-product, $(LOCAL_PATH)/prebuilts/lib/modules/modules.mk)
+
 ## Ramdisk
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/ramdisk/init.2ndstg.rc:root/init.2ndstg.rc \
-        $(LOCAL_PATH)/ramdisk/init.elden.rc:root/init.elden.rc \
+        $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.class_core.sh:root/init.qcom.class_core.sh \
         $(LOCAL_PATH)/ramdisk/init.qcom.class_main.sh:root/init.qcom.class_main.sh \
         $(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.sh:root/init.qcom.sh \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
         $(LOCAL_PATH)/ramdisk/init.qcom.usb.sh:root/init.qcom.usb.sh \
-        $(LOCAL_PATH)/ramdisk/init.target.rc:root/init.target.rc \
         $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.qcom.rc \
         $(LOCAL_PATH)/ramdisk/logo.bmp:root/logo.bmp \
         $(LOCAL_PATH)/ramdisk/sbin/usbconfig:root/sbin/usbconfig
@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 # APN
 PRODUCT_COPY_FILES += \
@@ -69,6 +69,7 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+	alsa.msm8960 \
         audio.a2dp.default \
         audio.primary.msm8960 \
         audio_policy.msm8960 \
@@ -83,10 +84,12 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/lib/libacdbloader.so:system/lib/libacdbloader.so \
 	$(LOCAL_PATH)/prebuilts/lib/libalsautils.so:system/lib/libalsautils.so \
 	$(LOCAL_PATH)/prebuilts/lib/libaudcal.so:system/lib/libaudcal.so \
-	$(LOCAL_PATH)/prebuilts/lib/libaudioalsa.so:system/lib/libaudioalsa.so \
+	$(LOCAL_PATH)/prebuilts/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
         $(LOCAL_PATH)/prebuilts/lib/hw/alsa.msm8960.so:system/lib/hw/alsa.msm8960.so
 
 # Bluetooth
+#PRODUCT_PACKAGES += \
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/bin/bluetoothd:system/bin/bluetoothd \
 	$(LOCAL_PATH)/prebuilts/bin/bt_ssp_debug_mode.sh:system/bin/bt_ssp_debug_mode.sh \
@@ -111,8 +114,12 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+	Camera \
 	libcameraservice \
 	libcamera_client
+
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/prebuilts/lib/liboemcamera.so:obj/lib/liboemcamera.so
 
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/bin/mm-qcamera-daemon:system/bin/mm-qcamera-daemon \
@@ -120,8 +127,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts//bin/mm-qcamera-testsuite-client:system/bin/mm-qcamera-testsuite-client \
         $(LOCAL_PATH)/prebuilts/bin/v4l2-qcamera-app:system/bin/v4l2-qcamera-app \
         $(LOCAL_PATH)/prebuilts/lib/liboemcamera.so:system/lib/liboemcamera.so \
-        $(LOCAL_PATH)/prebuilts/lib/hw/camera.goldfish.so:system/lib/hw/camera.goldfish.so \
-        $(LOCAL_PATH)/prebuilts/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so
+	$(LOCAL_PATH)/prebuilts/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so
 
 # Display Firmware
 PRODUCT_COPY_FILES += \
@@ -222,21 +228,22 @@ PRODUCT_COPY_FILES += \
 
 # Misc (for now)
 PRODUCT_PACKAGES += \
-	applypatch \
-	applypatch_static \
 	badblocks \
-	check_prereq \
+	filterfw \
 	libwebcore \
-	libxml2
+	libxml2 \
+	Torch
 
-# nfc
+# Nfc
 PRODUCT_PACKAGES += \
+	com.android.nfc_extras \
 	libnfc \
-        com.android.nfc_extras
+	libnfc_ndef
 
 # Power
 
-# Qcom init scripts & softap
+# Qcom
+# init scripts & softap
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
         $(LOCAL_PATH)/prebuilts/etc/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
@@ -251,17 +258,24 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/lib/libQWiFiSoftApCfg.so:system/lib/libQWiFiSoftApCfg.so
 
 # Sensors
+PRODUCT_PACKAGES += \
+	libsensorservice
+
 PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilts/lib/libsensor1.so:system/lib/libsensor1.so \
         $(LOCAL_PATH)/prebuilts/lib/hw/sensors.goldfish.so:system/lib/hw/sensors.goldfish.so \
         $(LOCAL_PATH)/prebuilts/lib/hw/sensors.msm8960.so:system/lib/hw/sensors.msm8960.so
 
 # Wifi
+PRODUCT_PACKAGES += \
+	hostapd \
+	hostapd_cli \
+	libwpa_client \
+	wpa_cli \
+	wpa_supplicant
+
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/prebuilts/bin/hostapd:system/bin/hostapd \
-        $(LOCAL_PATH)/prebuilts/bin/hostapd_cli:system/bin/hostapd_cli \
         $(LOCAL_PATH)/prebuilts/bin/wiperiface_v02:system/bin/wiperiface_v02 \
-        $(LOCAL_PATH)/prebuilts/bin/wpa_cli:system/bin/wpa_cli \
-        $(LOCAL_PATH)/prebuilts/bin/wpa_supplicant:system/bin/wpa_supplicant \
         $(LOCAL_PATH)/prebuilts/etc/init.wlanprop.sh:system/etc/init.wlanprop.sh \
         $(LOCAL_PATH)/prebuilts/etc/wiperconfig.xml:system/etc/wiperconfig.xml \
         $(LOCAL_PATH)/prebuilts/etc/firmware/wlan/prima/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
@@ -269,35 +283,16 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
         $(LOCAL_PATH)/prebuilts/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
         $(LOCAL_PATH)/prebuilts/etc/wifi/p2p_supplicant.conf:system/etc/wifi/p2p_supplicant.conf \
-        $(LOCAL_PATH)/prebuilts/lib/libwiperjni_v02.so:system/lib/libwiperjni_v02.so \
-        $(LOCAL_PATH)/prebuilts/lib/libwpa_client.so:system/lib/libwpa_client.so
-
-## Wifi kernel module (this does not get built with kernel source)
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/prebuilts/lib/modules/prima/prima_wlan.ko:system/lib/modules/prima/prima_wlan.ko
+        $(LOCAL_PATH)/prebuilts/lib/libwiperjni_v02.so:system/lib/libwiperjni_v02.so
 
 # USB
 PRODUCT_PACKAGES += \
         com.android.future.usb.accessory
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.feature.ztedrm.support=1 \
-        ril.subscription.types=NV \
-        persist.sys.usb.menu=enable \
-        persist.sys.usb.config=mtp \
-        ro.config.sec_storage=1 \
-	drm.service.enabled=true \
-	wifi.interface=wlan0 \
-	ro.config.multimode_cdma=true \
-	persist.radio.apm_sim_not_pwdn=1 \
-	ro.vendor.extension_library=/system/lib/libqc-opt.so \
-	persist.sys.ztelog.enable=0 \
-	ro.telephony.default_network=4 \
-	persist.radio.add_power_save=1 \
-	ro.com.google.clientidbase.ms=android-metropcs-us \
-	ro.com.google.clientidbase.yt=android-zte \
-	ro.com.google.clientidbase.am=android-zte \
-	ro.com.google.clientidbase.gmm=android-zte
+	dalvik.vm.execution-mode=int:jit \
+	dalvik.vm.dexopt-flags=m=y \
+        dalvik.vm.dexopt-data-only=1
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_elden

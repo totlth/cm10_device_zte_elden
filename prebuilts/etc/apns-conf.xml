@@ -1,25 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-/*
-** Copyright 2012, Cyanogenmod
-**
-** Licensed under the Apache License, Version 2.0 (the "License");
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
--->
-
-<!-- use empty string to specify no proxy or port -->
-<!-- This version must agree with that in apps/common/res/apns.xml -->
-<apns count="3">
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<apns count="49">
+  <apn name="中国电信WAP设置CTWAP" numeric="46003" mcc="460" mnc="03" apn="ctwap" user="ctwap@mycdma.cn" server="null" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.vnet.mobi" type="default,mms,supl" />
+  <apn name="中国电信互联网设置CTNET" numeric="46003" mcc="460" mnc="03" apn="ctnet" user="ctnet@mycdma.cn" server="null" password="vnet.mobi" proxy="null" port="null" mmsproxy="null" mmsport="null" mmsprotocol="null" mmsc="null" type="default,dun" />
+  <apn name="中国电信WAP设置CTWAP" numeric="20404" mcc="204" mnc="04" apn="ctwap" user="ctwap@mycdma.cn" server="null" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.vnet.mobi" type="default,mms,supl" />
+  <apn name="中国电信互联网设置CTNET" numeric="20404" mcc="204" mnc="04" apn="ctnet" user="ctnet@mycdma.cn" server="null" password="vnet.mobi" proxy="null" port="null" mmsproxy="null" mmsport="null" mmsprotocol="null" mmsc="null" type="default,dun" />
+  <apn name="中国电信互联网设置CTNET" numeric="46012" mcc="460" mnc="12" apn="#777" user="ctnet@mycdma.cn" server="null" password="vnet.mobi" proxy="null" port="null" mmsproxy="null" mmsport="null" mmsprotocol="null" mmsc="null" type="default,dun" />
+  <apn name="中国电信WAP设置CTWAP" numeric="46012" mcc="460" mnc="12" apn="#777" user="ctwap@mycdma.cn" server="null" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.vnet.mobi" type="default,mms,supl" />
+  <apn name="沃3G连接互联网" numeric="46001" mcc="460" mnc="01" apn="3gnet" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="沃3G手机上网" numeric="46001" mcc="460" mnc="01" apn="3gwap" user="" server="" password="" proxy="10.0.0.172" port="80" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="联通彩信" numeric="46001" mcc="460" mnc="01" apn="3gwap" user="" server="" password="" proxy="" port="" mmsproxy="10.0.0.172" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.myuni.com.cn" type="mms" />
+  <apn name="中国移动因特网设置" numeric="46000" mcc="460" mnc="00" apn="cmnet" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="中国移动WAP设置" numeric="46000" mcc="460" mnc="00" apn="cmwap" user="" server="" password="" proxy="10.0.0.172" port="80" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="中国移动彩信设置" numeric="46000" mcc="460" mnc="00" apn="cmwap" user="" server="" password="" proxy="" port="" mmsproxy="10.0.0.172" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.monternet.com" type="mms" />
+  <apn name="中国移动因特网设置" numeric="46002" mcc="460" mnc="02" apn="cmnet" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="中国移动WAP设置" numeric="46002" mcc="460" mnc="02" apn="cmwap" user="" server="" password="" proxy="10.0.0.172" port="80" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="中国移动彩信设置" numeric="46002" mcc="460" mnc="02" apn="cmwap" user="" server="" password="" proxy="" port="" mmsproxy="10.0.0.172" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.monternet.com" type="mms" />
+  <apn name="中国移动因特网设置" numeric="46007" mcc="460" mnc="07" apn="cmnet" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="中国移动WAP设置" numeric="46007" mcc="460" mnc="07" apn="cmwap" user="" server="" password="" proxy="10.0.0.172" port="80" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="中国移动彩信设置" numeric="46007" mcc="460" mnc="07" apn="cmwap" user="" server="" password="" proxy="" port="" mmsproxy="10.0.0.172" mmsport="80" mmsprotocol="null" mmsc="http://mmsc.monternet.com" type="mms" />
+  <apn name="APTWAP" numeric="46605" mcc="466" mnc="05" apn="APTWAP" user="aptwap@nsip.qma.com.tw" server="null" password="aptwap" proxy="210.200.66.196" port="80" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="http://mmsc.vnet.mobi" type="default" />
+  <apn name="APTNET" numeric="46605" mcc="466" mnc="05" apn="APTNET" user="aptwap@nsip.qma.com.tw" server="null" password="aptwap" proxy="null" port="null" mmsproxy="null" mmsport="null" mmsprotocol="null" mmsc="null" type="default" />
+  <apn name="TMMK Internet" numeric="29401" mcc="294" mnc="01" apn="Internet" user="internet" server="" password="t-mobile" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="TMMK MMS" numeric="29401" mcc="294" mnc="01" apn="mms" user="mms" server="" password="mms" proxy="" port="" mmsproxy="62.162.155.227" mmsport="8080" mmsprotocol="null" mmsc="http://mms.t-mobile.com.mk" type="mms" />
+  <apn name="SmartFren" numeric="51028" mcc="510" mnc="28" apn="SmartFren" user="smart" server="" password="smart" proxy="10.17.27.250" port="8080" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="SMART" numeric="51028" mcc="510" mnc="28" apn="SmartFren" user="smart" server="" password="smart" proxy="" port="" mmsproxy="10.17.27.250" mmsport="8080" mmsprotocol="null" mmsc="http://10.17.93.103:8080" type="mms" />
+  <apn name="SmartFren" numeric="510028" mcc="510" mnc="028" apn="SmartFren" user="smart" server="" password="smart" proxy="10.17.27.250" port="8080" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="SMART" numeric="510028" mcc="510" mnc="028" apn="SmartFren" user="smart" server="" password="smart" proxy="" port="" mmsproxy="10.17.27.250" mmsport="8080" mmsprotocol="null" mmsc="http://10.17.93.103:8080" type="mms" />
+  <apn name="SmartFren" numeric="51009" mcc="510" mnc="09" apn="SmartFren" user="smart" server="" password="smart" proxy="10.17.27.250" port="8080" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="SMART" numeric="51009" mcc="510" mnc="09" apn="SmartFren" user="smart" server="" password="smart" proxy="" port="" mmsproxy="10.17.27.250" mmsport="8080" mmsprotocol="null" mmsc="http://10.17.93.103:8080" type="mms" />
+  <apn name="SmartFren" numeric="510009" mcc="510" mnc="009" apn="SmartFren" user="smart" server="" password="smart" proxy="10.17.27.250" port="8080" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="SMART" numeric="510009" mcc="510" mnc="009" apn="SmartFren" user="smart" server="" password="smart" proxy="" port="" mmsproxy="10.17.27.250" mmsport="8080" mmsprotocol="null" mmsc="http://10.17.93.103:8080" type="mms" />
+  <apn name="Starcomms" numeric="62101" mcc="621" mnc="01" apn="#777" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="AHA" numeric="51099" mcc="510" mnc="99" apn="#777" user="aha@aha.co.id" server="" password="aha" proxy="" port="" mmsproxy="null" mmsport="null" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="esia" numeric="51099" mcc="510" mnc="99" apn="#777" user="esia" server="" password="esia" proxy="" port="" mmsproxy="null" mmsport="null" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="Visafone" numeric="62125" mcc="621" mnc="25" apn="#777" user="wap@wap.com" server="" password="wap" proxy="192.168.165.201" port="8080" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="VisafoneNet" numeric="62125" mcc="621" mnc="25" apn="#777" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="Expresso" numeric="62004" mcc="620" mnc="04" apn="#777" user="Evdo@expresso.com" server="" password="evdo" proxy="" port="8000" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="FlexiBroadband" numeric="51000" mcc="510" mnc="00" apn="#777" user="" server="" password="telkom" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="FlexiNet-volumebased" numeric="51000" mcc="510" mnc="00" apn="#777" user="telkomnet@flexi" server="" password="telkom" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="FlexiNet-timebased" numeric="51000" mcc="510" mnc="00" apn="#777" user="telkomnet@flexi-time" server="" password="telkom" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="FlexiNet-unlimited" numeric="51000" mcc="510" mnc="00" apn="#777" user="" server="" password="telkom" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="ota" numeric="310120" mcc="310" mnc="120" apn="otasn" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default,fota" />
+  <apn name="ota" numeric="310120" mcc="310" mnc="120" apn="otasn" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default,fota" />
+  <apn name="MTS Internet" numeric="40400" mcc="404" mnc="00" apn="#777" user="internet@internet.mtsindia.in" server="null" password="MTS" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="MTS Internet" numeric="40489" mcc="404" mnc="89" apn="#777" user="internet@internet.mtsindia.in" server="null" password="MTS" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="MTS Internet" numeric="40500" mcc="405" mnc="00" apn="#777" user="internet@internet.mtsindia.in" server="null" password="MTS" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
+  <apn name="MTS Internet" numeric="40589" mcc="405" mnc="89" apn="#777" user="internet@internet.mtsindia.in" server="null" password="MTS" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default" />
   <apn name="INTERNET" numeric="311660" mcc="311" mnc="660" apn="internet.metropcs" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="default,supl" />
   <apn name="MMS" numeric="311660" mcc="311" mnc="660" apn="internet.metropcs" user="" server="" password="" proxy="metropcs.net" port="3128" mmsproxy="metropcs.net" mmsport="3128" mmsprotocol="null" mmsc="http://mms.metropcs.net:3128/mmsc" type="mms" />
   <apn name="IMSIODT" numeric="311660" mcc="311" mnc="660" apn="imsiodt.metropcs" user="" server="" password="" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="null" mmsc="" type="ims" />

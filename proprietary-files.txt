@@ -1,6 +1,8 @@
 
 bin/acdbtest
 bin/akmd8962_new
+bin/applypatch
+bin/applypatch_static
 bin/ATFWD-daemon
 
 bin/battery_charging
@@ -9,7 +11,7 @@ bin/bridgemgrd
 
 bin/ccid_daemon
 bin/checkdata
-bin/cmp
+bin/check_prereq
 bin/cnd
 bin/curl
 
@@ -21,14 +23,14 @@ bin/ds_fmc_appd
 bin/dspcrashd
 bin/dun-server
 
-bin/ext4check.sh
-
 bin/fixebr
 bin/fixebr.sh
 bin/flash_image
 bin/fm_qsoc_patches
 bin/fmconfig
 bin/format_vfat
+bin/ftmdaemon
+bin/ftmdaemon-oem
 
 bin/gatttool
 bin/gdbjithelper
@@ -69,6 +71,7 @@ bin/nl_listener
 bin/omx_tests
 
 bin/ping6
+bin/pppd
 bin/port-bridge
 bin/powertop
 bin/profiler_daemon
@@ -111,6 +114,7 @@ bin/usbmanutag
 bin/vfat_valid
 bin/vfat_valid.sh
 
+bin/wifi_ftmd
 bin/wmdsi
 
 bin/zte_charger
@@ -118,13 +122,11 @@ bin/zte_charger
 etc/OperatorPolicy.xml
 etc/UserPolicy.xml
 
-etc/init.goldfish.sh
 etc/init.sysctl.sh
 etc/nv-conf.xml
 
 etc/thermald.conf
 
-etc/voicemail-conf.xml
 etc/vold.fstab
 
 etc/firmware/Ver11_20120409_N880E_ID0x55_app.bin
@@ -138,13 +140,19 @@ etc/firmware/vidc.mdt
 etc/firmware/vidc_1080p.fw
 etc/firmware/vidcfw.elf
 
-etc/res/images/charger/battery_1.png
-etc/res/images/charger/battery_2.png
-etc/res/images/charger/battery_3.png
-etc/res/images/charger/battery_4.png
-etc/res/images/charger/battery_5.png
-etc/res/images/charger/battery_charge.png
-etc/res/images/charger/battery_fail.png
+etc/permissions/cneapiclient.xml
+etc/permissions/com.qualcomm.location.quipslib.xml
+etc/permissions/com.qualcomm.location.vzw_library.xml
+etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml
+
+#etc/res/images/charger/battery_1.png
+#etc/res/images/charger/battery_2.png
+#etc/res/images/charger/battery_3.png
+#etc/res/images/charger/battery_4.png
+#etc/res/images/charger/battery_5.png
+#etc/res/images/charger/battery_charge.png
+#etc/res/images/charger/battery_fail.png
 
 etc/snd_soc_msm/DL_REC
 etc/snd_soc_msm/DL_REC_2x
@@ -172,6 +180,13 @@ etc/snd_soc_msm/snd_soc_msm_2x
 etc/srs/srsmodels.lic
 etc/srs/srs_processing.cfg
 etc/system_fonts.xml
+
+framework/cneapiclient.jar
+framework/com.qualcomm.location.vzw_library.jar
+framework/com.quicinc.cne.jar
+framework/modemwarmup.jar
+framework/qcnvitems.jar
+framework/qcrilhook.jar
 
 lib/drmclientlib.so
 
@@ -208,6 +223,7 @@ lib/libchromeview.so
 lib/libcneapiclient.so
 lib/libcneqmiutils.so
 lib/libcneutils.so
+lib/libCommandSvc.so
 lib/libconfigdb.so
 lib/libcurl.so
 
@@ -241,6 +257,8 @@ lib/libimage-jpeg-dec-omx-comp.so
 lib/libimage-jpeg-enc-omx-comp.so
 lib/libimage-omx-common.so
 
+lib/libminui_ftm.so
+lib/libminzip_ftm.so
 lib/libmm-abl-oem.so
 lib/libmm-abl.so
 lib/libmm-audio-resampler.so
@@ -309,7 +327,6 @@ lib/libril.so
 lib/librpc.so
 
 lib/libsapi_v4.so
-lib/libsensor1.so
 lib/libSHIMDivxDrm.so
 lib/libspeexwrapper.so
 lib/libsrsprocessing.so
@@ -357,6 +374,11 @@ lib/libztedrmjni.so
 lib/pp_proc_plugin.so
 lib/qnet-plugin.so
 lib/tcp-connections.so
+
+lib/bluez-plugin/audio.so
+lib/bluez-plugin/bluetooth-health.so
+lib/bluez-plugin/input.so
+lib/bluez-plugin/network.so
 
 vendor/firmware/libpn544_fw.so
 vendor/lib/drm/libdrmwvmplugin.so
