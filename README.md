@@ -2,9 +2,8 @@ WIP - CM 10 Device Tree
 
 Bluetooth not working<br>
 Phone.apk only works in speaker mode<br>
-<br>
-Not fully tested for bugs
-<br>
+Not fully tested for bugs<br>
+
 Wifi:
 Need to replace cm source/hardware/libhardware_legacy/wifi with:<br>
 https://github.com/totlth/cm10-elden_hardware_libhardware_legacy_wifi.git
