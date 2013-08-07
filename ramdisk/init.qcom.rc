@@ -403,6 +403,10 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc
     disabled
     oneshot
 
+service p2p_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/p2p_supplicant.conf
+    disabled
+    oneshot
+
 service dhcpcd_wlan0 /system/bin/dhcpcd -BKLG
     class late_start
     disabled
