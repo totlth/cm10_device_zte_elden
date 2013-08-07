@@ -1,9 +1,11 @@
 WIP - CM 10 Device Tree
 
-Builds and boots successfully.
-Wifi doesn't work - Have incomplete settings.
-Network/ril doesn't work.
-Have not fully tested cuz I'm trying to get service working, so there may be more broken.
+Bluetooth not working<br>
+Phone.apk only works in speaker mode<br>
+<br>
+Wifi:
+Need to replace cm source/hardware/libhardware_legacy/wifi with:<br>
+https://github.com/totlth/cm10-elden_hardware_libhardware_legacy_wifi.git
 
 device repo: in "source"/device dir make zte dir then cd into it and issue - 
 git clone https://github.com/totlth/cm10_device_zte_elden.git elden
