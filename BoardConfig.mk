@@ -91,6 +91,9 @@ WITH_JIT := true
 ENABLE_JSC_JIT := true
 JS_ENGINE := v8
 
+# Lights
+TARGET_PROVIDES_LIBLIGHTS := true
+
 # Power
 
 # Sensors

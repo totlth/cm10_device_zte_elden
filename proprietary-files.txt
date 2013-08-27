@@ -277,7 +277,6 @@ lib/libmmstillomx.so
 lib/libmmwfdinterface.so
 lib/libmmwfdsinkinterface.so
 lib/libmmwfdsrcinterface.so
-lib/libmyaes.so
 
 lib/libnetmgr.so
 lib/libnetmonitor.so

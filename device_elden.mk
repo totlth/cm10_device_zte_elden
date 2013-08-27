@@ -63,16 +63,12 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-# APN
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilts/etc/apns-conf.xml:system/etc/apns-conf.xml	
-
 # Audio
 PRODUCT_PACKAGES += \
-	alsa.msm8960 \
         audio.a2dp.default \
-        audio.primary.msm8960 \
+	audio_policy.default \
         audio_policy.msm8960 \
+        audio.primary.msm8960 \
         libalsa-intf \
         libaudioparameter \
         libaudioutils
@@ -85,7 +81,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/lib/libalsautils.so:system/lib/libalsautils.so \
 	$(LOCAL_PATH)/prebuilts/lib/libaudcal.so:system/lib/libaudcal.so \
 	$(LOCAL_PATH)/prebuilts/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
-        $(LOCAL_PATH)/prebuilts/lib/hw/alsa.msm8960.so:system/lib/hw/alsa.msm8960.so
+        $(LOCAL_PATH)/prebuilts/lib/hw/alsa.msm8960.so:system/lib/hw/alsa.msm8960.so \
+        $(LOCAL_PATH)/prebuilts/lib/hw/audio.primary.default.so:system/lib/hw/audio.primary.default.so \
+	$(LOCAL_PATH)/prebuilts/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Bluetooth
 #PRODUCT_PACKAGES += \
@@ -114,9 +112,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-	Camera \
-	libcameraservice \
-	libcamera_client
+	libcameraservice
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/lib/liboemcamera.so:obj/lib/liboemcamera.so
@@ -126,6 +122,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/bin/mm-qcamera-test:system/bin/mm-qcamera-test \
         $(LOCAL_PATH)/prebuilts//bin/mm-qcamera-testsuite-client:system/bin/mm-qcamera-testsuite-client \
         $(LOCAL_PATH)/prebuilts/bin/v4l2-qcamera-app:system/bin/v4l2-qcamera-app \
+        $(LOCAL_PATH)/prebuilts/lib/libcamera_client.so:system/lib/libcamera_client.so \
         $(LOCAL_PATH)/prebuilts/lib/liboemcamera.so:system/lib/liboemcamera.so \
 	$(LOCAL_PATH)/prebuilts/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so
 
@@ -198,8 +195,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/usr/idc/Fts-touchscreen.idc:system/usr/idc/Fts-touchscreen.idc
 
 # Lights
-PRODUCT_PACKAGES += \
-        lights.msm8960
+PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilts/lib/hw/lights.goldfish.so:system/lib/hw/lights.goldfish.so \
+        $(LOCAL_PATH)/prebuilts/lib/hw/lights.msm8960.so:system/lib/hw/lights.msm8960.so
 
 # Media/OMX
 PRODUCT_PACKAGES += \

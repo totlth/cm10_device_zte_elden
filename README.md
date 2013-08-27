@@ -6,8 +6,11 @@ Not fully tested for bugs<br>
 
 Wifi:
 Need to replace cm source/hardware/libhardware_legacy/wifi with:<br>
-https://github.com/totlth/cm10-elden_hardware_libhardware_legacy_wifi.git
-
+https://github.com/totlth/cm10-elden_hardware_libhardware_legacy_wifi.git<br>
+and<br>
+cd into "source"/hardware/qcom and issue<br>
+git clone https://github.com/totlth/cm10-elden_hardware_qcom_wlan.git wlan<br>
+<br>
 device repo: in "source"/device dir make zte dir then cd into it and issue<br> 
 git clone https://github.com/totlth/cm10_device_zte_elden.git elden
 
