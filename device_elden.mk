@@ -68,6 +68,7 @@ PRODUCT_PACKAGES += \
         audio.a2dp.default \
 	audio_policy.default \
         audio_policy.msm8960 \
+	audio.primary.default \
         audio.primary.msm8960 \
         libalsa-intf \
         libaudioparameter \
@@ -82,33 +83,24 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/lib/libaudcal.so:system/lib/libaudcal.so \
 	$(LOCAL_PATH)/prebuilts/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
         $(LOCAL_PATH)/prebuilts/lib/hw/alsa.msm8960.so:system/lib/hw/alsa.msm8960.so \
-        $(LOCAL_PATH)/prebuilts/lib/hw/audio.primary.default.so:system/lib/hw/audio.primary.default.so \
 	$(LOCAL_PATH)/prebuilts/etc/audio_policy.conf:system/etc/audio_policy.conf
 
 # Bluetooth
 #PRODUCT_PACKAGES += \
+#	bluetoothd \
+#	libbluedroid \
+#	libbluetooth \
+#	libbluetoothd \
+#	libbtio
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/bin/bluetoothd:system/bin/bluetoothd \
-	$(LOCAL_PATH)/prebuilts/bin/bt_ssp_debug_mode.sh:system/bin/bt_ssp_debug_mode.sh \
-	$(LOCAL_PATH)/prebuilts/bin/bt_testmode.sh:system/bin/bt_testmode.sh \
-	$(LOCAL_PATH)/prebuilts/bin/bt_testmode_new.sh:system/bin/bt_testmode_new.sh \
 	$(LOCAL_PATH)/prebuilts/bin/btnvtool:system/bin/btnvtool \
  	$(LOCAL_PATH)/prebuilts/bin/hciattach:system/bin/hciattach \
 	$(LOCAL_PATH)/prebuilts/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
  	$(LOCAL_PATH)/prebuilts/bin/hciconfig:system/bin/hciconfig \
 	$(LOCAL_PATH)/prebuilts/bin/hcitool:system/bin/hcitool \
-	$(LOCAL_PATH)/prebuilts/bin/init.btprop.sh:system/bin/init.btprop.sh \
-	$(LOCAL_PATH)/prebuilts/etc/bluetooth/audio.conf:system/etc/bluetooth/audio.conf \
-	$(LOCAL_PATH)/prebuilts/etc/bluetooth/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
-	$(LOCAL_PATH)/prebuilts/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
-	$(LOCAL_PATH)/prebuilts/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
-	$(LOCAL_PATH)/prebuilts/etc/bluetooth/main.conf:system/etc/bluetooth/main.conf \
-	$(LOCAL_PATH)/prebuilts/etc/bluetooth/network.conf:system/etc/bluetooth/network.conf \
-	$(LOCAL_PATH)/prebuilts/lib/libbluedroid.so:system/lib/libbluedroid.so \
-	$(LOCAL_PATH)/prebuilts/lib/libbluetooth.so:system/lib/libbluetooth.so \
-	$(LOCAL_PATH)/prebuilts/lib/libbluetoothd.so:system/lib/libbluetoothd.so \
-	$(LOCAL_PATH)/prebuilts/lib/libbtio.so:system/lib/libbtio.so
+	$(LOCAL_PATH)/prebuilts/bin/init.btprop.sh:system/bin/init.btprop.sh
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -124,6 +116,7 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/bin/v4l2-qcamera-app:system/bin/v4l2-qcamera-app \
         $(LOCAL_PATH)/prebuilts/lib/libcamera_client.so:system/lib/libcamera_client.so \
         $(LOCAL_PATH)/prebuilts/lib/liboemcamera.so:system/lib/liboemcamera.so \
+        $(LOCAL_PATH)/prebuilts/lib/hw/camera.goldfish.so:system/lib/hw/camera.goldfish.so \
 	$(LOCAL_PATH)/prebuilts/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so
 
 # Display Firmware
@@ -172,9 +165,14 @@ PRODUCT_PACKAGES += \
         libloc_eng
 
 PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilts/lib/hw/gps.default.so:system/lib/hw/gps.default.so \
+        $(LOCAL_PATH)/prebuilts/lib/hw/gps.goldfish.so:system/lib/hw/gps.goldfish.so \
         $(LOCAL_PATH)/prebuilts/etc/gps.conf:system/etc/gps.conf \
         $(LOCAL_PATH)/prebuilts/lib/libgps.so:system/lib/libgps.so \
+        $(LOCAL_PATH)/prebuilts/lib/libgps.utils.so:system/lib/libgps.utils.so \
+        $(LOCAL_PATH)/prebuilts/lib/libloc_adapter.so:system/lib/libloc_adapter.so \
         $(LOCAL_PATH)/prebuilts/lib/libloc_api_v02.so:system/lib/libloc_api_v02.so \
+        $(LOCAL_PATH)/prebuilts/lib/libloc_eng.so:system/lib/libloc_eng.so \
         $(LOCAL_PATH)/prebuilts/lib/libloc_ext.so:system/lib/libloc_ext.so
 
 # HDMI
@@ -192,7 +190,8 @@ PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/prebuilts/usr/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
         $(LOCAL_PATH)/prebuilts/usr/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl \
         $(LOCAL_PATH)/prebuilts/usr/keylayout/syna-touchscreen.kl:system/usr/keylayout/syna-touchscreen.kl \
-	$(LOCAL_PATH)/prebuilts/usr/idc/Fts-touchscreen.idc:system/usr/idc/Fts-touchscreen.idc
+	$(LOCAL_PATH)/prebuilts/usr/idc/Fts-touchscreen.idc:system/usr/idc/Fts-touchscreen.idc \
+	$(LOCAL_PATH)/prebuilts/usr/idc/syna-touchscreen.idc:system/usr/idc/syna-touchscreen.idc
 
 # Lights
 PRODUCT_COPY_FILES += \

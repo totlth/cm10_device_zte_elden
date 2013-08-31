@@ -192,8 +192,6 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-    start qcamerasvr
-
 on post-fs
     chown system system /carrier
     chmod 0771 /carrier
@@ -275,6 +273,11 @@ on post-fs-data
 
     #Create /data/data/media for SRS to be able to create a user config file
     mkdir /data/data/media 0770 media media
+
+service qcamerasvr /system/bin/mm-qcamera-daemon
+        class late_start
+        user media
+        group system camera inet input graphics
 
 # Export GPIO56 for fusion targets to enable/disable hub
 service usbhub_init /system/bin/usbhub_init

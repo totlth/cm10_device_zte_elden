@@ -358,11 +358,6 @@ lib/pp_proc_plugin.so
 lib/qnet-plugin.so
 lib/tcp-connections.so
 
-lib/bluez-plugin/audio.so
-lib/bluez-plugin/bluetooth-health.so
-lib/bluez-plugin/input.so
-lib/bluez-plugin/network.so
-
 vendor/firmware/libpn544_fw.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/libWVStreamControlAPI_L3.so

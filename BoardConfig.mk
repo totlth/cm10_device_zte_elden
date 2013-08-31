@@ -53,12 +53,8 @@ BOARD_USES_SEPERATED_AUDIO_INPUT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/zte/elden/bluetooth
-
-# Camera
-V4L2_BASED_LIBCAM := true
+TARGET_CUSTOM_BLUEDROID := ../../../device/zte/elden/bluetooth/bluetooth.c
 
 # Display/Graphics
 BOARD_EGL_CFG := device/zte/elden/prebuilts/lib/egl/egl.cfg
