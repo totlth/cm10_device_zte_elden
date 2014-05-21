@@ -112,6 +112,8 @@ power.webview.DM=false
 ro.camera.sound.forced=0
 
 #
+ro.feature.ztedrm.support=1
+ril.subscription.types=NV
 persist.sys.usb.menu=enable
 ro.config.sec_storage=1
 persist.radio.reset_on_switch=0

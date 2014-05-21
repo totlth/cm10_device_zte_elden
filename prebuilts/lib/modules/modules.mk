@@ -4,7 +4,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bluetooth-power.ko:system/lib/modules/bluetooth-power.ko \
 	$(LOCAL_PATH)/dma_test.ko:system/lib/modules/dma_test.ko \
 	$(LOCAL_PATH)/eeprom_93cx6.ko:system/lib/modules/eeprom_93cx6.ko \
-	$(LOCAL_PATH)/evbug.ko:system/lib/modules/evobug.ko \
+	$(LOCAL_PATH)/evbug.ko:system/lib/modules/evbug.ko \
 	$(LOCAL_PATH)/gspca_main.ko:system/lib/modules/gspca_main.ko \
 	$(LOCAL_PATH)/ks8851.ko:system/lib/modules/ks8851.ko \
 	$(LOCAL_PATH)/lcd.ko:system/lib/modules/lcd.ko \

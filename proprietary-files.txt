@@ -1,8 +1,6 @@
 
 bin/acdbtest
 bin/akmd8962_new
-bin/applypatch
-bin/applypatch_static
 bin/ATFWD-daemon
 
 bin/battery_charging
@@ -11,12 +9,10 @@ bin/bridgemgrd
 
 bin/ccid_daemon
 bin/checkdata
-bin/check_prereq
 bin/cnd
 bin/curl
 
 bin/diag_klog
-bin/diag_mdlog
 bin/diag_uart_log
 bin/drmdiagapp
 bin/ds_fmc_appd
@@ -106,7 +102,6 @@ bin/test_gemini
 bin/thermald
 bin/time_daemon
 
-bin/updater
 bin/usbhub
 bin/usbhub_init
 bin/usbmanutag
@@ -115,7 +110,6 @@ bin/vfat_valid
 bin/vfat_valid.sh
 
 bin/wifi_ftmd
-bin/wmdsi
 
 bin/zte_charger
 
@@ -145,14 +139,6 @@ etc/permissions/com.qualcomm.location.quipslib.xml
 etc/permissions/com.qualcomm.location.vzw_library.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
-
-etc/res/images/charger/battery_1.png
-etc/res/images/charger/battery_2.png
-etc/res/images/charger/battery_3.png
-etc/res/images/charger/battery_4.png
-etc/res/images/charger/battery_5.png
-etc/res/images/charger/battery_charge.png
-etc/res/images/charger/battery_fail.png
 
 etc/snd_soc_msm/DL_REC
 etc/snd_soc_msm/DL_REC_2x
@@ -314,7 +300,6 @@ lib/libril-qcril-hook-oem.so
 lib/libril.so
 lib/librpc.so
 
-lib/libsapi_v4.so
 lib/libSHIMDivxDrm.so
 lib/libsrsprocessing.so
 lib/libsurfaceflinger_client.so

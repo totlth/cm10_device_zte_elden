@@ -1,3 +1,13 @@
+on boot-pause
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 19D2
+    write /sys/class/android_usb/android0/idProduct 1353
+    write /sys/class/android_usb/android0/functions mass_storage
+    write /sys/class/android_usb/android0/enable 1
+#    start adbd
+    
+    chmod 777 /system/bin/battery_charging
+    exec /system/bin/battery_charging
 
 import init.qcom.usb.rc
 
@@ -25,6 +35,22 @@ on init
     mkdir /persist 0771 system system
     mkdir /tombstones 0771 system system
     mkdir /firmware 0771 system system
+    
+# ZTE_PM_SLF_001:modify the permissions of PM interface
+    chmod 0660 /sys/module/pm8921_charger/parameters/disabled
+    chmod 0660 /sys/module/pm8921_charger/parameters/enable_to_shutdown
+    chmod 0660 /sys/class/rtc/rtc0/wakealarm
+    chmod 0660 /sys/kernel/debug/gpio_debug/gpio_get
+    chmod 0660 /sys/kernel/debug/gpio_debug/gpio_out_l
+    chmod 0660 /sys/kernel/debug/gpio_debug/gpio_out_h
+
+    chown root system /sys/module/pm8921_charger/parameters/disabled
+    chown root system /sys/module/pm8921_charger/parameters/enable_to_shutdown
+    chown root system /sys/class/rtc/rtc0/wakealarm
+    chown root system /sys/kernel/debug/gpio_debug/gpio_get
+    chown root system /sys/kernel/debug/gpio_debug/gpio_out_l
+    chown root system /sys/kernel/debug/gpio_debug/gpio_out_h    
+# ZTE_PM_SLF_001:end
 
 on emmc-fs
 

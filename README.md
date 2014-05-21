@@ -1,11 +1,10 @@
 WIP - CM 10 Device Tree
 
-Bluetooth not working<br>
-Phone.apk only works in speaker mode<br>
-Not fully tested for bugs<br>
+Still broke:<br>
+only minor bugs exist<br>
 
-Wifi:
-Need to replace cm source/hardware/libhardware_legacy/wifi with:<br>
+
+Wifi: Need to replace cm source/hardware/libhardware_legacy/wifi with:<br>
 https://github.com/totlth/cm10-elden_hardware_libhardware_legacy_wifi.git<br>
 and<br>
 cd into "source"/hardware/qcom and issue<br>
