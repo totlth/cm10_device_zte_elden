@@ -103,9 +103,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/lib/hw/camera.msm8960.so:system/lib/hw/camera.msm8960.so
 
 # Charger
-PRODUCT_PACKAGES += \
-	charger \
-	charger_res_images
+#PRODUCT_PACKAGES += \
+#	charger \
+#	charger_res_images
 
 # Display Firmware
 PRODUCT_COPY_FILES += \
