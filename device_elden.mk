@@ -62,6 +62,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilts/lib/libalsautils.so:system/lib/libalsautils.so \
 	$(LOCAL_PATH)/prebuilts/lib/libaudcal.so:system/lib/libaudcal.so \
 	$(LOCAL_PATH)/prebuilts/lib/libaudioalsa.so:obj/lib/libaudioalsa.so \
+	$(LOCAL_PATH)/prebuilts/lib/libsrsprocessing.so:system/lib/libsrsprocessing.so \
         $(LOCAL_PATH)/prebuilts/lib/hw/alsa.msm8960.so:system/lib/hw/alsa.msm8960.so \
         $(LOCAL_PATH)/prebuilts/lib/hw/audio.primary.msm8960.so:system/lib/hw/audio.primary.msm8960.so \
         $(LOCAL_PATH)/prebuilts/etc/audio_policy.conf:system/etc/audio_policy.conf

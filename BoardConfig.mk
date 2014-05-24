@@ -142,6 +142,7 @@ TARGET_PROVIDES_RELEASETOOLS := true
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/zte/elden/releasetools/elden_ota_from_target_files
 
 # Sensors
+BOARD_USE_LEGACY_SENSORS_FUSION := false
 
 # USB
 BOARD_CUSTOM_USB_CONTROLLER := ../../device/zte/elden/UsbController.cpp
